@@ -1,0 +1,69 @@
+export const tool={
+  "id": "E077",
+  "slug": "eng-adiabatic-temperature",
+  "title": "단열 이상기체 출구온도 계산기",
+  "title_en": "Adiabatic Ideal Gas Temperature Calculator",
+  "category": "열",
+  "category_en": "Thermodynamics",
+  "fields": [
+    {
+      "key": "t1",
+      "label": "입구 절대온도 T₁",
+      "label_en": "Initial absolute temperature T₁",
+      "dimension": "temperature",
+      "example": 300,
+      "constraint": "positive",
+      "display_unit": "K",
+      "display_value": "300"
+    },
+    {
+      "key": "p1",
+      "label": "초기 절대압 p₁",
+      "label_en": "Initial absolute pressure p₁",
+      "dimension": "pressure",
+      "example": 100000.0,
+      "constraint": "positive",
+      "display_unit": "kPa",
+      "display_value": "100"
+    },
+    {
+      "key": "p2",
+      "label": "최종 절대압 p₂",
+      "label_en": "Final absolute pressure p₂",
+      "dimension": "pressure",
+      "example": 200000.0,
+      "constraint": "positive",
+      "display_unit": "kPa",
+      "display_value": "200"
+    },
+    {
+      "key": "gamma",
+      "label": "비열비 γ",
+      "label_en": "Heat capacity ratio γ",
+      "dimension": "ratio",
+      "example": 1.4,
+      "constraint": "positive",
+      "display_unit": "1",
+      "display_value": "1.4"
+    }
+  ],
+  "result_label": "최종 절대온도 T₂",
+  "result_label_en": "Final absolute temperature T₂",
+  "result_dimension": "temperature",
+  "formula": "T₂ = T₁(p₂/p₁)^((γ−1)/γ)",
+  "purpose": "가역 단열 이상기체 과정의 압력비에 따른 온도 계산",
+  "purpose_en": "Calculate final temperature for a reversible adiabatic ideal-gas process.",
+  "assumptions": "T₁,p₁,p₂>0, γ>1. 일정 비열의 이상기체가 가역 단열 과정을 거친다고 가정한다. 비가역 효율·충격파·상변화는 제외하며 게이지압을 쓰지 않는다.",
+  "assumptions_en": "Required: T₁,p₁,p₂>0, γ>1 and a reversible adiabatic ideal-gas process with constant heat capacities. Excluded: irreversible efficiency, shocks and phase change. Pressures are absolute.",
+  "sources": [
+    {
+      "label": "OpenStax · 3 6 adiabatic processes for an ideal gas",
+      "url": "https://openstax.org/books/university-physics-volume-2/pages/3-6-adiabatic-processes-for-an-ideal-gas"
+    }
+  ],
+  "condition": "",
+  "condition_en": "",
+  "site": "https://nanalab.kr/eng-adiabatic-temperature/",
+  "repository": "https://github.com/NaNaCompany/eng-adiabatic-temperature",
+  "output_unit": "K"
+};
